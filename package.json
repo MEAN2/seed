@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --progress --port 8080",
+    "serve:ng": "webpack-dev-server --inline --progress --port 8080",
+    "serve:express": "node server.js",
+    "start": "npm-run-all --parallel serve:*",
     "build": "rimraf build && webpack --config webpack.config.js --progress --profile --bail",
     "test": "karma start"
   },
@@ -40,6 +42,7 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.8.0",
+    "npm-run-all": "^3.1.2",
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.14",
     "raw-loader": "^0.5.1",
