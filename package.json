@@ -4,8 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "webpack",
-    "start": "node server.js"
+    "start": "webpack-dev-server --inline --progress --port 8080",
+    "build": "rimraf build && webpack --config webpack.config.js --progress --profile --bail",
+    "test": "karma start"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +22,6 @@
     "@angular/router": "^3.3.1",
     "core-js": "^2.4.1",
     "rxjs": "^5.0.1",
-    "webpack": "^2.2.0-rc.0",
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
@@ -46,6 +46,7 @@
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "typescript": "^2.1.4",
+    "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2",
     "webpack-merge": "^1.1.1"
   }
